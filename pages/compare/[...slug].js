@@ -12,6 +12,9 @@ export async function getStaticProps({ params }) {
   let repoData = []
   let repoCommits = []
 
+  console.log(process.env)
+  console.log(process.env.GITHUB_KEY)
+
   const octokit = new Octokit({
     auth: process.env.GITHUB_KEY,
     userAgent: 'sonnet-18 v1.0.0',
