@@ -22,7 +22,7 @@ export async function getStaticProps({ params }) {
   })
 
   for (let r of repos) {
-    let ownerRepo = r.split('#')
+    let ownerRepo = r.split(':')
 
     const repoRes = await octokit.repos.get({
       owner: ownerRepo[0],
