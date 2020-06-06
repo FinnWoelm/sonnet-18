@@ -6,6 +6,7 @@
     "dev": "next",
     "build": "next build",
     "postbuild": "next-on-netlify",
+    "copyfunction": "cp ./functions/test.js ./out_functions/test.js",
     "start": "next start"
   },
   "dependencies": {
