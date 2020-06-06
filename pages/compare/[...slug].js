@@ -12,8 +12,8 @@ export async function getStaticProps({ params }) {
   let repoData = []
   let repoCommits = []
 
-  console.log(process.env)
-  console.log(process.env.GITHUB_KEY)
+  console.log(params)
+  console.log(repos)
 
   const octokit = new Octokit({
     auth: process.env.GITHUB_KEY,
