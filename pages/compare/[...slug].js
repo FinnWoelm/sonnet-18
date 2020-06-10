@@ -24,10 +24,14 @@ export async function getStaticProps({ params }) {
   for (let r of repos) {
     let ownerRepo = r.split(':')
 
+    console.log(ownerRepo)
+
     const repoRes = await octokit.repos.get({
       owner: ownerRepo[0],
       repo: ownerRepo[1],
     })
+
+    console.log(repoRes)
 
     repoData.push(repoRes.data)
 
@@ -35,6 +39,9 @@ export async function getStaticProps({ params }) {
       owner: ownerRepo[0],
       repo: ownerRepo[1],
     })
+
+    console.log(repoCom)
+    console.log(repoCom.data)
 
     let totals = 0
     repoCom.data.map((stat) => {
